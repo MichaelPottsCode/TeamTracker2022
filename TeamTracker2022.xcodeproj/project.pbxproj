@@ -8,17 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		2750DD592949189A00614DF9 /* TeamTracker2022App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750DD582949189A00614DF9 /* TeamTracker2022App.swift */; };
-		2750DD5B2949189A00614DF9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750DD5A2949189A00614DF9 /* ContentView.swift */; };
+		2750DD5B2949189A00614DF9 /* PlayerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750DD5A2949189A00614DF9 /* PlayerListView.swift */; };
 		2750DD5D2949189B00614DF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2750DD5C2949189B00614DF9 /* Assets.xcassets */; };
 		2750DD602949189B00614DF9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2750DD5F2949189B00614DF9 /* Preview Assets.xcassets */; };
+		2750DD69294918C200614DF9 /* TeamModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2750DD67294918C200614DF9 /* TeamModel.xcdatamodeld */; };
+		2750DD6B2949191C00614DF9 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750DD6A2949191C00614DF9 /* DataManager.swift */; };
+		2750DD6D29491C6300614DF9 /* PlayerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750DD6C29491C6300614DF9 /* PlayerListViewModel.swift */; };
+		2750DD72294934E100614DF9 /* PlayerListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750DD71294934E100614DF9 /* PlayerListItemView.swift */; };
+		2750DD7729493C6700614DF9 /* PlayerEntity+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750DD7629493C6700614DF9 /* PlayerEntity+Extensions.swift */; };
+		276588592949FC0400E67F0B /* PlayerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276588582949FC0400E67F0B /* PlayerImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2750DD552949189A00614DF9 /* TeamTracker2022.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamTracker2022.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2750DD582949189A00614DF9 /* TeamTracker2022App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTracker2022App.swift; sourceTree = "<group>"; };
-		2750DD5A2949189A00614DF9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2750DD5A2949189A00614DF9 /* PlayerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListView.swift; sourceTree = "<group>"; };
 		2750DD5C2949189B00614DF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2750DD5F2949189B00614DF9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2750DD68294918C200614DF9 /* TeamModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TeamModel.xcdatamodel; sourceTree = "<group>"; };
+		2750DD6A2949191C00614DF9 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		2750DD6C29491C6300614DF9 /* PlayerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListViewModel.swift; sourceTree = "<group>"; };
+		2750DD71294934E100614DF9 /* PlayerListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListItemView.swift; sourceTree = "<group>"; };
+		2750DD7629493C6700614DF9 /* PlayerEntity+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerEntity+Extensions.swift"; sourceTree = "<group>"; };
+		276588582949FC0400E67F0B /* PlayerImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +63,10 @@
 		2750DD572949189A00614DF9 /* TeamTracker2022 */ = {
 			isa = PBXGroup;
 			children = (
+				2750DD7429493C4300614DF9 /* Base */,
 				2750DD582949189A00614DF9 /* TeamTracker2022App.swift */,
-				2750DD5A2949189A00614DF9 /* ContentView.swift */,
+				2750DD6E294934A900614DF9 /* Features */,
+				2750DD66294918A800614DF9 /* Core Data */,
 				2750DD5C2949189B00614DF9 /* Assets.xcassets */,
 				2750DD5E2949189B00614DF9 /* Preview Content */,
 			);
@@ -65,6 +79,74 @@
 				2750DD5F2949189B00614DF9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2750DD66294918A800614DF9 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				2750DD67294918C200614DF9 /* TeamModel.xcdatamodeld */,
+				2750DD6A2949191C00614DF9 /* DataManager.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		2750DD6E294934A900614DF9 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				2750DD7329493C2300614DF9 /* Player List */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		2750DD6F294934B200614DF9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2750DD5A2949189A00614DF9 /* PlayerListView.swift */,
+				2750DD71294934E100614DF9 /* PlayerListItemView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2750DD70294934B900614DF9 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				2750DD6C29491C6300614DF9 /* PlayerListViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		2750DD7329493C2300614DF9 /* Player List */ = {
+			isa = PBXGroup;
+			children = (
+				2750DD6F294934B200614DF9 /* Views */,
+				2750DD70294934B900614DF9 /* View Models */,
+			);
+			path = "Player List";
+			sourceTree = "<group>";
+		};
+		2750DD7429493C4300614DF9 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				276588572949FBEB00E67F0B /* Views */,
+				2750DD7529493C4B00614DF9 /* Models */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		2750DD7529493C4B00614DF9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2750DD7629493C6700614DF9 /* PlayerEntity+Extensions.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		276588572949FBEB00E67F0B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				276588582949FC0400E67F0B /* PlayerImageView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +219,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2750DD5B2949189A00614DF9 /* ContentView.swift in Sources */,
+				2750DD7729493C6700614DF9 /* PlayerEntity+Extensions.swift in Sources */,
+				2750DD69294918C200614DF9 /* TeamModel.xcdatamodeld in Sources */,
+				2750DD6B2949191C00614DF9 /* DataManager.swift in Sources */,
+				276588592949FC0400E67F0B /* PlayerImageView.swift in Sources */,
+				2750DD5B2949189A00614DF9 /* PlayerListView.swift in Sources */,
 				2750DD592949189A00614DF9 /* TeamTracker2022App.swift in Sources */,
+				2750DD72294934E100614DF9 /* PlayerListItemView.swift in Sources */,
+				2750DD6D29491C6300614DF9 /* PlayerListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +427,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2750DD67294918C200614DF9 /* TeamModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2750DD68294918C200614DF9 /* TeamModel.xcdatamodel */,
+			);
+			currentVersion = 2750DD68294918C200614DF9 /* TeamModel.xcdatamodel */;
+			path = TeamModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2750DD4D2949189900614DF9 /* Project object */;
 }

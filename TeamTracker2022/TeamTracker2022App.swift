@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct TeamTracker2022App: App {
+    let dataManager = DataManager.shared
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PlayerListView()
+                .environment(\.managedObjectContext, dataManager.container.viewContext)
         }
     }
 }
