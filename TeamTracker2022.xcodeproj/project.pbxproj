@@ -17,6 +17,8 @@
 		2750DD72294934E100614DF9 /* PlayerListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750DD71294934E100614DF9 /* PlayerListItemView.swift */; };
 		2750DD7729493C6700614DF9 /* PlayerEntity+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750DD7629493C6700614DF9 /* PlayerEntity+Extensions.swift */; };
 		276588592949FC0400E67F0B /* PlayerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276588582949FC0400E67F0B /* PlayerImageView.swift */; };
+		2765885C294A017D00E67F0B /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2765885B294A017D00E67F0B /* Symbols.swift */; };
+		2765885E294A01F900E67F0B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2765885D294A01F900E67F0B /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		2750DD71294934E100614DF9 /* PlayerListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListItemView.swift; sourceTree = "<group>"; };
 		2750DD7629493C6700614DF9 /* PlayerEntity+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerEntity+Extensions.swift"; sourceTree = "<group>"; };
 		276588582949FC0400E67F0B /* PlayerImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerImageView.swift; sourceTree = "<group>"; };
+		2765885B294A017D00E67F0B /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
+		2765885D294A01F900E67F0B /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 				2750DD7429493C4300614DF9 /* Base */,
 				2750DD582949189A00614DF9 /* TeamTracker2022App.swift */,
 				2750DD6E294934A900614DF9 /* Features */,
+				2765885A294A016200E67F0B /* Resources */,
 				2750DD66294918A800614DF9 /* Core Data */,
 				2750DD5C2949189B00614DF9 /* Assets.xcassets */,
 				2750DD5E2949189B00614DF9 /* Preview Content */,
@@ -149,6 +154,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		2765885A294A016200E67F0B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2765885B294A017D00E67F0B /* Symbols.swift */,
+				2765885D294A01F900E67F0B /* Theme.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -219,12 +233,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2765885C294A017D00E67F0B /* Symbols.swift in Sources */,
 				2750DD7729493C6700614DF9 /* PlayerEntity+Extensions.swift in Sources */,
 				2750DD69294918C200614DF9 /* TeamModel.xcdatamodeld in Sources */,
 				2750DD6B2949191C00614DF9 /* DataManager.swift in Sources */,
 				276588592949FC0400E67F0B /* PlayerImageView.swift in Sources */,
 				2750DD5B2949189A00614DF9 /* PlayerListView.swift in Sources */,
 				2750DD592949189A00614DF9 /* TeamTracker2022App.swift in Sources */,
+				2765885E294A01F900E67F0B /* Theme.swift in Sources */,
 				2750DD72294934E100614DF9 /* PlayerListItemView.swift in Sources */,
 				2750DD6D29491C6300614DF9 /* PlayerListViewModel.swift in Sources */,
 			);
