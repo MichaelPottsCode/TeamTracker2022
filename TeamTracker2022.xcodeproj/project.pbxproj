@@ -19,6 +19,7 @@
 		276588592949FC0400E67F0B /* PlayerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276588582949FC0400E67F0B /* PlayerImageView.swift */; };
 		2765885C294A017D00E67F0B /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2765885B294A017D00E67F0B /* Symbols.swift */; };
 		2765885E294A01F900E67F0B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2765885D294A01F900E67F0B /* Theme.swift */; };
+		27658860294A953800E67F0B /* ModalTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2765885F294A953800E67F0B /* ModalTypes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		276588582949FC0400E67F0B /* PlayerImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerImageView.swift; sourceTree = "<group>"; };
 		2765885B294A017D00E67F0B /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		2765885D294A01F900E67F0B /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		2765885F294A953800E67F0B /* ModalTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTypes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 			children = (
 				2765885B294A017D00E67F0B /* Symbols.swift */,
 				2765885D294A01F900E67F0B /* Theme.swift */,
+				2765885F294A953800E67F0B /* ModalTypes.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2765885C294A017D00E67F0B /* Symbols.swift in Sources */,
+				27658860294A953800E67F0B /* ModalTypes.swift in Sources */,
 				2750DD7729493C6700614DF9 /* PlayerEntity+Extensions.swift in Sources */,
 				2750DD69294918C200614DF9 /* TeamModel.xcdatamodeld in Sources */,
 				2750DD6B2949191C00614DF9 /* DataManager.swift in Sources */,

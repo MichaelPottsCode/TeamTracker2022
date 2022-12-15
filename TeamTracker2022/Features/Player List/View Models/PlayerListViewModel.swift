@@ -29,24 +29,20 @@ final class PlayerListVIewModel: ObservableObject {
     }
     
     func addPlayer() {
-        
         let newPlayer = PlayerEntity(context: DataManager.shared.container.viewContext)
         newPlayer.firstName_ = "Mike"
         newPlayer.lastName_ = "Potts"
         newPlayer.position_ = "Goalie"
         saveTeam()
         loadPlayers()
-        
     }
     
     func saveTeam() {
-        
         do {
             try DataManager.shared.container.viewContext.save()
         } catch {
             print("ERROR SAVING DATA \(error.localizedDescription)")
         }
-        
     }
     
     func deletePlayer(offsets: IndexSet) {
@@ -54,5 +50,4 @@ final class PlayerListVIewModel: ObservableObject {
         saveTeam()
         loadPlayers()
     }
-    
 }

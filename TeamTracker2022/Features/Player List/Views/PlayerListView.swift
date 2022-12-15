@@ -35,6 +35,14 @@ struct PlayerListView: View {
                         Text("Add player")
                     }
                 }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        //
+                    } label: {
+                        Symbols.settings
+                    }
+
+                }
             }
         }
     }
