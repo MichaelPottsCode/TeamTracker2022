@@ -8,7 +8,7 @@
 import CoreData
 import Foundation
 
-final class PlayerListVIewModel: ObservableObject {
+final class PlayerListViewModel: ObservableObject {
     
     @Published var players: [PlayerEntity] = []
     

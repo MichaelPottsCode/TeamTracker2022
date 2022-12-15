@@ -10,7 +10,7 @@ import Foundation
 
 final class DataManager {
     
-    static let shared = DataManager()
+    static let shared = DataManager(inMemory: true)
     
     static var preview: DataManager = {
         let result = DataManager(inMemory: true)

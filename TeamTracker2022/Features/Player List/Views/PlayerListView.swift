@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct PlayerListView: View {
-    @StateObject private var playerListVM = PlayerListVIewModel()
+    @StateObject private var playerListVM = PlayerListViewModel()
+    @State private var isAddingNewPlayer: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -29,7 +30,8 @@ struct PlayerListView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         withAnimation {
-                            playerListVM.addPlayer()
+//                            playerListVM.addPlayer()
+                            isAddingNewPlayer.toggle()
                         }
                     } label: {
                         Text("Add player")
@@ -41,8 +43,10 @@ struct PlayerListView: View {
                     } label: {
                         Symbols.settings
                     }
-
                 }
+            }
+            .sheet(isPresented: $isAddingNewPlayer, onDismiss: playerListVM.loadPlayers) {
+                PlayerFormView()
             }
         }
     }

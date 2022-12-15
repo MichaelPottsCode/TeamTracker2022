@@ -20,6 +20,9 @@
 		2765885C294A017D00E67F0B /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2765885B294A017D00E67F0B /* Symbols.swift */; };
 		2765885E294A01F900E67F0B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2765885D294A01F900E67F0B /* Theme.swift */; };
 		27658860294A953800E67F0B /* ModalTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2765885F294A953800E67F0B /* ModalTypes.swift */; };
+		27658865294A9CBA00E67F0B /* PlayerFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27658864294A9CBA00E67F0B /* PlayerFormView.swift */; };
+		27658867294A9CE300E67F0B /* PlayerFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27658866294A9CE300E67F0B /* PlayerFormViewModel.swift */; };
+		27658869294A9D4400E67F0B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27658868294A9D4400E67F0B /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,9 @@
 		2765885B294A017D00E67F0B /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		2765885D294A01F900E67F0B /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		2765885F294A953800E67F0B /* ModalTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTypes.swift; sourceTree = "<group>"; };
+		27658864294A9CBA00E67F0B /* PlayerFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFormView.swift; sourceTree = "<group>"; };
+		27658866294A9CE300E67F0B /* PlayerFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFormViewModel.swift; sourceTree = "<group>"; };
+		27658868294A9D4400E67F0B /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +75,8 @@
 		2750DD572949189A00614DF9 /* TeamTracker2022 */ = {
 			isa = PBXGroup;
 			children = (
-				2750DD7429493C4300614DF9 /* Base */,
 				2750DD582949189A00614DF9 /* TeamTracker2022App.swift */,
+				2750DD7429493C4300614DF9 /* Base */,
 				2750DD6E294934A900614DF9 /* Features */,
 				2765885A294A016200E67F0B /* Resources */,
 				2750DD66294918A800614DF9 /* Core Data */,
@@ -100,6 +106,7 @@
 		2750DD6E294934A900614DF9 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				27658861294A9C8300E67F0B /* Player Form */,
 				2750DD7329493C2300614DF9 /* Player List */,
 			);
 			path = Features;
@@ -164,6 +171,32 @@
 				2765885F294A953800E67F0B /* ModalTypes.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		27658861294A9C8300E67F0B /* Player Form */ = {
+			isa = PBXGroup;
+			children = (
+				27658862294A9C9000E67F0B /* Views */,
+				27658863294A9C9700E67F0B /* View Models */,
+			);
+			path = "Player Form";
+			sourceTree = "<group>";
+		};
+		27658862294A9C9000E67F0B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				27658864294A9CBA00E67F0B /* PlayerFormView.swift */,
+				27658868294A9D4400E67F0B /* CustomTextField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		27658863294A9C9700E67F0B /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				27658866294A9CE300E67F0B /* PlayerFormViewModel.swift */,
+			);
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,17 +269,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27658869294A9D4400E67F0B /* CustomTextField.swift in Sources */,
 				2765885C294A017D00E67F0B /* Symbols.swift in Sources */,
 				27658860294A953800E67F0B /* ModalTypes.swift in Sources */,
 				2750DD7729493C6700614DF9 /* PlayerEntity+Extensions.swift in Sources */,
 				2750DD69294918C200614DF9 /* TeamModel.xcdatamodeld in Sources */,
 				2750DD6B2949191C00614DF9 /* DataManager.swift in Sources */,
 				276588592949FC0400E67F0B /* PlayerImageView.swift in Sources */,
+				27658867294A9CE300E67F0B /* PlayerFormViewModel.swift in Sources */,
 				2750DD5B2949189A00614DF9 /* PlayerListView.swift in Sources */,
 				2750DD592949189A00614DF9 /* TeamTracker2022App.swift in Sources */,
 				2765885E294A01F900E67F0B /* Theme.swift in Sources */,
 				2750DD72294934E100614DF9 /* PlayerListItemView.swift in Sources */,
 				2750DD6D29491C6300614DF9 /* PlayerListViewModel.swift in Sources */,
+				27658865294A9CBA00E67F0B /* PlayerFormView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
