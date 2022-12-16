@@ -23,6 +23,7 @@
 		27658865294A9CBA00E67F0B /* PlayerFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27658864294A9CBA00E67F0B /* PlayerFormView.swift */; };
 		27658867294A9CE300E67F0B /* PlayerFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27658866294A9CE300E67F0B /* PlayerFormViewModel.swift */; };
 		27658869294A9D4400E67F0B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27658868294A9D4400E67F0B /* CustomTextField.swift */; };
+		2765886C294BF17E00E67F0B /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2765886B294BF17E00E67F0B /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		27658864294A9CBA00E67F0B /* PlayerFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFormView.swift; sourceTree = "<group>"; };
 		27658866294A9CE300E67F0B /* PlayerFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFormViewModel.swift; sourceTree = "<group>"; };
 		27658868294A9D4400E67F0B /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		2765886B294BF17E00E67F0B /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				2750DD7429493C4300614DF9 /* Base */,
 				2750DD6E294934A900614DF9 /* Features */,
 				2765885A294A016200E67F0B /* Resources */,
+				2765886A294BF10200E67F0B /* Utilities */,
 				2750DD66294918A800614DF9 /* Core Data */,
 				2750DD5C2949189B00614DF9 /* Assets.xcassets */,
 				2750DD5E2949189B00614DF9 /* Preview Content */,
@@ -199,6 +202,14 @@
 			path = "View Models";
 			sourceTree = "<group>";
 		};
+		2765886A294BF10200E67F0B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2765886B294BF17E00E67F0B /* ImagePicker.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -281,6 +292,7 @@
 				2750DD592949189A00614DF9 /* TeamTracker2022App.swift in Sources */,
 				2765885E294A01F900E67F0B /* Theme.swift in Sources */,
 				2750DD72294934E100614DF9 /* PlayerListItemView.swift in Sources */,
+				2765886C294BF17E00E67F0B /* ImagePicker.swift in Sources */,
 				2750DD6D29491C6300614DF9 /* PlayerListViewModel.swift in Sources */,
 				27658865294A9CBA00E67F0B /* PlayerFormView.swift in Sources */,
 			);
