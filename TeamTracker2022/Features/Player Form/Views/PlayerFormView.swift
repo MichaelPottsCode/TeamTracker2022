@@ -19,10 +19,10 @@ struct PlayerFormView: View {
         NavigationStack {
             
             VStack {
-                if let playerImage = imagePicker.image {
-                    playerImage
+                if let playerImage = imagePicker.uiImage {
+                    Image(uiImage: playerImage)
                         .resizable()
-                        .scaledToFill()
+//                        .scaledToFill()
                         .frame(width: 200, height: 200)
                         .clipShape(Circle())
                         .padding(.bottom)
@@ -36,18 +36,18 @@ struct PlayerFormView: View {
                     })
                     .buttonStyle(.bordered)
                     .padding(.bottom)
-                    .onChange(of: imagePicker.imageSelection) { newImage in
+                    .onChange(of: imagePicker.uiImage) { newImage in
                         print("NEW IMAGE READY TO SAVE")
                         playerFormVM.imageID = UUID().uuidString
                         print(playerFormVM.imageID ?? "No ID")
                         print(imagePicker.uiImage == nil)
-                        if let imageID = playerFormVM.imageID {
-                            print(imageID)
-                            if let uiImage = imagePicker.uiImage {
-                                print("CALLING SAVE FUNCTION")
-                                fileManager.saveImage(with: imageID, image: uiImage)
-                            }
-                        }
+//                        if let imageID = playerFormVM.imageID {
+//                            print(imageID)
+//                            if let uiImage = imagePicker.uiImage {
+//                                print("CALLING SAVE FUNCTION")
+//                                fileManager.saveImage(with: imageID, image: uiImage)
+//                            }
+//                        }
                     }
                 }
                 
@@ -57,8 +57,12 @@ struct PlayerFormView: View {
                 
                 Button {
                     //
-                    
+                    if let playerImage = imagePicker.uiImage {
+                        playerFormVM.imageID = UUID().uuidString
+                        fileManager.saveImage(with: playerFormVM.imageID!, image: playerImage)
+                    }
                     playerFormVM.addPlayer()
+                    
                     dismiss()
                 } label: {
                     Text("Save Player")

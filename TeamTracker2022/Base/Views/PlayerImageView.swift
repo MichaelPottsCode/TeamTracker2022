@@ -34,7 +34,7 @@ struct PlayerImageView: View {
 //            Image("noah")
             Image(uiImage: playerImage)
                 .resizable()
-                .scaledToFit()
+//                .scaledToFit()
                 .clipShape(Circle())
             .frame(width: size, height: size)
         }

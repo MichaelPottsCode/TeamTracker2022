@@ -23,11 +23,11 @@ extension FileManager {
     func saveImage(with id: String, image: UIImage) {
         if let data = image.jpegData(compressionQuality: 0.6) {
             do {
-                print("\(id)")
+//                print("\(id)")
 
                 let url = URL.documentsDirectory.appendingPathComponent("\(id).jpg")
                 try data.write(to: url)
-                print("Image saved")
+//                print("Image saved")
             } catch {
                 print(error.localizedDescription)
             }
