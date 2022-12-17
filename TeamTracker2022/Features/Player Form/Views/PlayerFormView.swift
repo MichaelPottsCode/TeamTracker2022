@@ -7,11 +7,13 @@
 
 import PhotosUI
 import SwiftUI
+import UIKit
 
 struct PlayerFormView: View {
     @Environment(\.dismiss) var dismiss
     @StateObject private var playerFormVM = PlayerFormViewModel()
     @StateObject private var imagePicker = ImagePicker()
+    let fileManager = FileManager()
     
     var body: some View {
         NavigationStack {
@@ -34,6 +36,19 @@ struct PlayerFormView: View {
                     })
                     .buttonStyle(.bordered)
                     .padding(.bottom)
+                    .onChange(of: imagePicker.imageSelection) { newImage in
+                        print("NEW IMAGE READY TO SAVE")
+                        playerFormVM.imageID = UUID().uuidString
+                        print(playerFormVM.imageID ?? "No ID")
+                        print(imagePicker.uiImage == nil)
+                        if let imageID = playerFormVM.imageID {
+                            print(imageID)
+                            if let uiImage = imagePicker.uiImage {
+                                print("CALLING SAVE FUNCTION")
+                                fileManager.saveImage(with: imageID, image: uiImage)
+                            }
+                        }
+                    }
                 }
                 
                 CustomTextField(textInput: $playerFormVM.newFirstName, label: "First Name")
@@ -42,6 +57,7 @@ struct PlayerFormView: View {
                 
                 Button {
                     //
+                    
                     playerFormVM.addPlayer()
                     dismiss()
                 } label: {

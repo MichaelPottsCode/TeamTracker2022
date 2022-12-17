@@ -14,6 +14,7 @@ final class PlayerFormViewModel: ObservableObject {
     @Published var newFirstName: String = ""
     @Published var newLastName: String = ""
     @Published var newPosition: String = ""
+    @Published var imageID: String?
     
     func addPlayer() {
         
@@ -21,6 +22,7 @@ final class PlayerFormViewModel: ObservableObject {
         newPlayer.firstName_ = newFirstName
         newPlayer.lastName_ = newLastName
         newPlayer.position_ = newPosition
+        newPlayer.imageID = imageID
         
         do {
             try viewContext.save()

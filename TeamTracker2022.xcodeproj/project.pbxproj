@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		272827C7294D38B400FF8C8F /* FileManager+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272827C6294D38B400FF8C8F /* FileManager+Extensions.swift */; };
 		2750DD592949189A00614DF9 /* TeamTracker2022App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750DD582949189A00614DF9 /* TeamTracker2022App.swift */; };
 		2750DD5B2949189A00614DF9 /* PlayerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750DD5A2949189A00614DF9 /* PlayerListView.swift */; };
 		2750DD5D2949189B00614DF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2750DD5C2949189B00614DF9 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		272827C6294D38B400FF8C8F /* FileManager+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extensions.swift"; sourceTree = "<group>"; };
 		2750DD552949189A00614DF9 /* TeamTracker2022.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamTracker2022.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2750DD582949189A00614DF9 /* TeamTracker2022App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTracker2022App.swift; sourceTree = "<group>"; };
 		2750DD5A2949189A00614DF9 /* PlayerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListView.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				2765886B294BF17E00E67F0B /* ImagePicker.swift */,
+				272827C6294D38B400FF8C8F /* FileManager+Extensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				2765885E294A01F900E67F0B /* Theme.swift in Sources */,
 				2750DD72294934E100614DF9 /* PlayerListItemView.swift in Sources */,
 				2765886C294BF17E00E67F0B /* ImagePicker.swift in Sources */,
+				272827C7294D38B400FF8C8F /* FileManager+Extensions.swift in Sources */,
 				2750DD6D29491C6300614DF9 /* PlayerListViewModel.swift in Sources */,
 				27658865294A9CBA00E67F0B /* PlayerFormView.swift in Sources */,
 			);
