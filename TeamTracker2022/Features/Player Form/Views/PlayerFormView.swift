@@ -20,6 +20,7 @@ struct PlayerFormView: View {
             
             VStack {
                 if let playerImage = imagePicker.uiImage {
+//                    PlayerImageView(size: 225, color: .primary, playerImageID: playerFormVM.imageID)
                     Image(uiImage: playerImage)
                         .resizable()
 //                        .scaledToFill()
@@ -62,7 +63,6 @@ struct PlayerFormView: View {
                         fileManager.saveImage(with: playerFormVM.imageID!, image: playerImage)
                     }
                     playerFormVM.addPlayer()
-                    
                     dismiss()
                 } label: {
                     Text("Save Player")
@@ -70,7 +70,6 @@ struct PlayerFormView: View {
                 .buttonStyle(.bordered)
                 .padding(.top)
 
-                
                 Spacer()
             }
             .padding(.top)
