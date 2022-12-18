@@ -13,7 +13,6 @@ struct PlayerFormView: View {
     @Environment(\.dismiss) var dismiss
     @StateObject private var playerFormVM = PlayerFormViewModel()
     @StateObject private var imagePicker = ImagePicker()
-    let fileManager = FileManager()
     
     var body: some View {
         NavigationStack {
@@ -60,7 +59,7 @@ struct PlayerFormView: View {
                     //
                     if let playerImage = imagePicker.uiImage {
                         playerFormVM.imageID = UUID().uuidString
-                        fileManager.saveImage(with: playerFormVM.imageID!, image: playerImage)
+                        FileManager().saveImage(with: playerFormVM.imageID!, image: playerImage)
                     }
                     playerFormVM.addPlayer()
                     dismiss()

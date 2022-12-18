@@ -16,19 +16,24 @@ final class PlayerFormViewModel: ObservableObject {
     @Published var newPosition: String = ""
     @Published var imageID: String?
     
+    @Published var isUpdating: Bool = false
+    
     func addPlayer() {
         
         let newPlayer = PlayerEntity(context: viewContext)
         newPlayer.firstName_ = newFirstName
         newPlayer.lastName_ = newLastName
         newPlayer.position_ = newPosition
-        newPlayer.imageID = imageID
+        newPlayer.imageID_ = imageID
         
         do {
             try viewContext.save()
         } catch {
             print("ERROR SAVING DATA \(error.localizedDescription)")
         }
+    }
+    
+    func updatePlayer() {
         
     }
 }

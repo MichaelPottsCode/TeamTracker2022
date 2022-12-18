@@ -14,14 +14,10 @@ struct PlayerImageView: View {
     var highlightColor: Color
     var playerImage: UIImage
     
-    init(size: CGFloat = 225, color: Color = .primary, playerImageID: String? = nil) {
+    init(size: CGFloat = 225, color: Color = .primary, image: UIImage) {
         self.size = size
         self.highlightColor = color
-        if let imageID = playerImageID {
-            self.playerImage = fileManager.retrieveImage(with: imageID) ?? UIImage(named: "noah")!
-        } else {
-            self.playerImage = UIImage(named: "noah")!
-        }
+        self.playerImage = image
     }
     
     var body: some View {
@@ -43,7 +39,7 @@ struct PlayerImageView: View {
 
 struct PlayerImageView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerImageView()
+        PlayerImageView(image: UIImage(named: "noah")!)
             .previewLayout(.sizeThatFits)
             .padding()
     }

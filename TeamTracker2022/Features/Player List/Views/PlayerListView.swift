@@ -10,6 +10,7 @@ import SwiftUI
 struct PlayerListView: View {
     @StateObject private var playerListVM = PlayerListViewModel()
     @State private var isAddingNewPlayer: Bool = false
+    @State private var modalType: PlayerModalType?
     
     var body: some View {
         NavigationStack {
@@ -29,10 +30,11 @@ struct PlayerListView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        withAnimation {
+//                        withAnimation {
 //                            playerListVM.addPlayer()
                             isAddingNewPlayer.toggle()
-                        }
+                            modalType = .new
+//                        }
                     } label: {
                         Text("Add player")
                     }
@@ -45,6 +47,9 @@ struct PlayerListView: View {
                     }
                 }
             }
+//            .sheet(item: $modalType, onDismiss: playerListVM.loadPlayers, content: { player in
+//                <#code#>
+//            })
             .sheet(isPresented: $isAddingNewPlayer, onDismiss: playerListVM.loadPlayers) {
                 PlayerFormView()
             }

@@ -2,7 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22D5027d" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="PlayerEntity" representedClassName="PlayerEntity" syncable="YES" codeGenerationType="class">
         <attribute name="firstName_" optional="YES" attributeType="String"/>
-        <attribute name="imageID" optional="YES" attributeType="String"/>
+        <attribute name="imageID_" optional="YES" attributeType="String"/>
         <attribute name="lastName_" optional="YES" attributeType="String"/>
         <attribute name="position_" optional="YES" attributeType="String"/>
     </entity>

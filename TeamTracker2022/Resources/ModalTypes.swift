@@ -16,9 +16,9 @@ enum PlayerModalType: Identifiable {
     var id: String {
         switch self {
         case .new:
-            return "New Player"
+            return "New"
         case .update:
-            return "Update Player"
+            return "Update"
         }
     }
 }
