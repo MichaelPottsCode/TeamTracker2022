@@ -18,23 +18,22 @@ struct PlayerListView: View {
                 ForEach(playerListVM.players) { player in
                     NavigationLink(value: player) {
                         PlayerListItemView(player: player)
+//                            .overlay {
+//                                Text("Edit")
+//                            }
                     }
                 }
                 .onDelete(perform: playerListVM.deletePlayer)
             }
             .navigationDestination(for: PlayerEntity.self, destination: { player in
-                Text(player.fullName)
+                PlayerImageView(image: player.uiImage)
             })
             .listStyle(.plain)
             .navigationTitle("Players")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-//                        withAnimation {
-//                            playerListVM.addPlayer()
-                            isAddingNewPlayer.toggle()
-                            modalType = .new
-//                        }
+                        modalType = .new
                     } label: {
                         Text("Add player")
                     }
@@ -47,12 +46,9 @@ struct PlayerListView: View {
                     }
                 }
             }
-//            .sheet(item: $modalType, onDismiss: playerListVM.loadPlayers, content: { player in
-//                <#code#>
-//            })
-            .sheet(isPresented: $isAddingNewPlayer, onDismiss: playerListVM.loadPlayers) {
-                PlayerFormView()
-            }
+            .sheet(item: $modalType) {
+                playerListVM.loadPlayers()
+            } content: { $0 }
         }
     }
 }

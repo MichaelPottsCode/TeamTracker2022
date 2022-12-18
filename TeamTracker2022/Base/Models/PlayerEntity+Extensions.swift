@@ -37,7 +37,7 @@ extension PlayerEntity {
            let image = FileManager().retrieveImage(with: imageID) {
             return image
         } else {
-            return UIImage(named: "noah")!
+            return UIImage(named: "placeholder")!
         }
     }
     

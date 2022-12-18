@@ -47,6 +47,7 @@
 		27658866294A9CE300E67F0B /* PlayerFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFormViewModel.swift; sourceTree = "<group>"; };
 		27658868294A9D4400E67F0B /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		2765886B294BF17E00E67F0B /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		27DD0701294F84AB0098E7B1 /* DND-003.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "DND-003.md"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +80,7 @@
 		2750DD572949189A00614DF9 /* TeamTracker2022 */ = {
 			isa = PBXGroup;
 			children = (
+				27DD0700294F84850098E7B1 /* Notes */,
 				2750DD582949189A00614DF9 /* TeamTracker2022App.swift */,
 				2750DD7429493C4300614DF9 /* Base */,
 				2750DD6E294934A900614DF9 /* Features */,
@@ -211,6 +213,14 @@
 				272827C6294D38B400FF8C8F /* FileManager+Extensions.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		27DD0700294F84850098E7B1 /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				27DD0701294F84AB0098E7B1 /* DND-003.md */,
+			);
+			path = Notes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
