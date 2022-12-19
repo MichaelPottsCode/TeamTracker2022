@@ -18,15 +18,26 @@ struct PlayerListView: View {
                 ForEach(playerListVM.players) { player in
                     NavigationLink(value: player) {
                         PlayerListItemView(player: player)
+                        
 //                            .overlay {
 //                                Text("Edit")
 //                            }
                     }
+                    .swipeActions(edge: .leading, allowsFullSwipe: true, content: {
+                        Button {
+                            modalType = .update(player)
+                        } label: {
+                            Text("Edit")
+                        }
+                        .tint(.blue)
+
+                    })
                 }
                 .onDelete(perform: playerListVM.deletePlayer)
             }
             .navigationDestination(for: PlayerEntity.self, destination: { player in
-                PlayerImageView(image: player.uiImage)
+//                PlayerImageView(image: player.uiImage)
+                PlayerListItemView(player: player)
             })
             .listStyle(.plain)
             .navigationTitle("Players")

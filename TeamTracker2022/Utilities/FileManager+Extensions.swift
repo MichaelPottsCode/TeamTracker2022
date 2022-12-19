@@ -41,6 +41,7 @@ extension FileManager {
         if fileExists(atPath: url.path) {
             do {
                 try removeItem(at: url)
+//                print("OLD IMAGE DELETED")
             } catch {
                 print("Could not delete image")
             }

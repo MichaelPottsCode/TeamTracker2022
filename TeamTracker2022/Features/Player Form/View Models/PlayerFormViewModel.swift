@@ -60,17 +60,24 @@ final class PlayerFormViewModel: ObservableObject {
     
     func updatePlayer() {
         // find contact with the object ID from the player being edited
-        let playerToUpdate = viewContext.object(with: self.id!) as? PlayerEntity
-        // Update all properties based on what was entered (newXXX)
-        playerToUpdate?.firstName_ = newFirstName
-        playerToUpdate?.lastName_ = newLastName
-        playerToUpdate?.position_ = newPosition
-        playerToUpdate?.imageID_ = imageID
-        
-        do {
-            try viewContext.save()
-        } catch {
-            print("ERROR SAVING DATA \(error.localizedDescription)")
+        if let playerToUpdate = viewContext.object(with: self.id!) as? PlayerEntity {
+            
+            // Delete the current image
+            FileManager().deleteImage(with: playerToUpdate.imageID)
+            
+            // Update all properties based on what was entered (newXXX)
+            playerToUpdate.firstName_ = newFirstName
+            playerToUpdate.lastName_ = newLastName
+            playerToUpdate.position_ = newPosition
+            playerToUpdate.imageID_ = imageID
+            
+            FileManager().saveImage(with: imageID!, image: playerImage)
+            
+            do {
+                try viewContext.save()
+            } catch {
+                print("ERROR SAVING DATA \(error.localizedDescription)")
+            }
         }
 
     }
