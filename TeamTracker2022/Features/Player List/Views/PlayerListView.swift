@@ -10,7 +10,7 @@ import SwiftUI
 struct PlayerListView: View {
     @StateObject private var playerListVM = PlayerListViewModel()
     @State private var isAddingNewPlayer: Bool = false
-    @State private var modalType: PlayerModalType?
+    @State private var formType: PlayerFormType?
     
     var body: some View {
         NavigationStack {
@@ -18,6 +18,7 @@ struct PlayerListView: View {
                 ForEach(playerListVM.players) { player in
                     NavigationLink(value: player) {
                         PlayerListItemView(player: player)
+//                        PlayerListItemView2(id: player.objectID)
                         
 //                            .overlay {
 //                                Text("Edit")
@@ -25,7 +26,7 @@ struct PlayerListView: View {
                     }
                     .swipeActions(edge: .leading, allowsFullSwipe: true, content: {
                         Button {
-                            modalType = .update(player)
+                            formType = .update(player)
                         } label: {
                             Text("Edit")
                         }
@@ -44,21 +45,23 @@ struct PlayerListView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        modalType = .new
+                        formType = .new
                     } label: {
                         Text("Add player")
                     }
                 }
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
-                        //
+                        // Add a link to the Settings view
                     } label: {
                         Symbols.settings
                     }
                 }
             }
-            .sheet(item: $modalType) {
-                playerListVM.loadPlayers()
+            .sheet(item: $formType) {
+                Task {
+                    playerListVM.loadPlayers()
+                }
             } content: { $0 }
         }
     }

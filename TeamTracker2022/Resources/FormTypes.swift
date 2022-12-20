@@ -1,5 +1,5 @@
 //
-//  ModalTypes.swift
+//  FormTypes.swift
 //  TeamTracker2022
 //
 //  Created by Michael Potts on 12/14/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum PlayerModalType: Identifiable, View {
+enum PlayerFormType: Identifiable, View {
     
     case new
     case update(PlayerEntity)
@@ -24,9 +24,9 @@ enum PlayerModalType: Identifiable, View {
     var body: some View {
         switch self {
         case .new:
-            return PlayerFormView(playerFormVM: PlayerFormViewModel())
+            return PlayerFormView2(playerFormVM: PlayerFormViewModel())
         case .update(let player):
-            return PlayerFormView(playerFormVM: PlayerFormViewModel(player))
+            return PlayerFormView2(playerFormVM: PlayerFormViewModel(player))
         }
     }
 }
