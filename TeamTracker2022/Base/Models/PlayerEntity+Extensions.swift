@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension PlayerEntity {
     
@@ -22,9 +23,22 @@ extension PlayerEntity {
         position_ ?? "No position"
     }
     
+    var imageID: String {
+        imageID_ ?? ""
+    }
+    
     // computed properties
     var fullName: String {
         firstName + " " + lastName
+    }
+    
+    var uiImage: UIImage {
+        if !imageID.isEmpty,
+           let image = FileManager().retrieveImage(with: imageID) {
+            return image
+        } else {
+            return UIImage(named: "placeholder")!
+        }
     }
     
 }

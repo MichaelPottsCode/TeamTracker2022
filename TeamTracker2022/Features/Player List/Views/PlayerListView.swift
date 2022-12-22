@@ -5,10 +5,13 @@
 //  Created by Michael Potts on 12/13/22.
 //
 
+import CoreData
 import SwiftUI
 
 struct PlayerListView: View {
-    @StateObject private var playerListVM = PlayerListVIewModel()
+    @StateObject private var playerListVM = PlayerListViewModel()
+    @State private var isAddingNewPlayer: Bool = false
+    @State private var formType: PlayerFormType?
     
     var body: some View {
         NavigationStack {
@@ -17,33 +20,51 @@ struct PlayerListView: View {
                     NavigationLink(value: player) {
                         PlayerListItemView(player: player)
                     }
+                    .swipeActions(edge: .leading, allowsFullSwipe: true, content: {
+                        Button {
+                            formType = .update(player)
+                        } label: {
+                            Text("Edit")
+                        }
+                        .tint(.blue)
+                    })
                 }
                 .onDelete(perform: playerListVM.deletePlayer)
             }
             .navigationDestination(for: PlayerEntity.self, destination: { player in
-                Text(player.fullName)
+                PlayerListItemView(player: player)
             })
             .listStyle(.plain)
             .navigationTitle("Players")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        withAnimation {
-                            playerListVM.addPlayer()
-                        }
-                    } label: {
-                        Text("Add player")
-                    }
+                    addPlayer
                 }
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        //
-                    } label: {
-                        Symbols.settings
-                    }
-
+                    settings
                 }
             }
+            .sheet(item: $formType) {
+                Task {
+                    playerListVM.loadPlayers()
+                }
+            } content: { $0 }
+        }
+    }
+    
+    var settings: some View {
+        Button {
+            // Add a link to the Settings view
+        } label: {
+            Symbols.settings
+        }
+    }
+    
+    var addPlayer: some View {
+        Button {
+            formType = .new
+        } label: {
+            Text("Add player")
         }
     }
 }

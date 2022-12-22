@@ -12,7 +12,7 @@ struct PlayerListItemView: View {
     
     var body: some View {
         HStack {
-            PlayerImageView(size: 65)
+            PlayerImageView(size: 65, image: player.uiImage)
             VStack(alignment: .leading) {
                 Text(player.fullName)
                     .font(.title2)

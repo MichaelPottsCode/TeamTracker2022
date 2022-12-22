@@ -6,14 +6,18 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct PlayerImageView: View {
+    private var fileManager = FileManager()
     var size: CGFloat
     var highlightColor: Color
+    var playerImage: UIImage
     
-    init(size: CGFloat = 225, color: Color = .primary) {
+    init(size: CGFloat = 225, color: Color = .primary, image: UIImage) {
         self.size = size
         self.highlightColor = color
+        self.playerImage = image
     }
     
     var body: some View {
@@ -23,9 +27,10 @@ struct PlayerImageView: View {
                 .foregroundColor(highlightColor)
                 .frame(width: size, height: size)
                 .shadow(color: highlightColor, radius: 10, x: 0, y: 0)
-            Image("noah")
+//            Image("noah")
+            Image(uiImage: playerImage)
                 .resizable()
-                .scaledToFit()
+                .scaledToFill()
                 .clipShape(Circle())
             .frame(width: size, height: size)
         }
@@ -34,7 +39,7 @@ struct PlayerImageView: View {
 
 struct PlayerImageView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerImageView()
+        PlayerImageView(image: UIImage(named: "noah")!)
             .previewLayout(.sizeThatFits)
             .padding()
     }

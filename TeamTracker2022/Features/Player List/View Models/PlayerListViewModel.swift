@@ -8,18 +8,18 @@
 import CoreData
 import Foundation
 
-final class PlayerListVIewModel: ObservableObject {
+final class PlayerListViewModel: ObservableObject {
     
     @Published var players: [PlayerEntity] = []
     
     init() {
-        
         loadPlayers()
     }
     
     func loadPlayers() {
-        
         let fetchRequest = NSFetchRequest<PlayerEntity>(entityName: "PlayerEntity")
+        let sortDescriptors: [NSSortDescriptor] = [NSSortDescriptor(key: "lastName_", ascending: true), NSSortDescriptor(key: "firstName_", ascending: true)]
+        fetchRequest.sortDescriptors = sortDescriptors
         
         do {
             players = try DataManager.shared.container.viewContext.fetch(fetchRequest)

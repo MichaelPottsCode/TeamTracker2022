@@ -15,6 +15,9 @@ struct TeamTracker2022App: App {
         WindowGroup {
             PlayerListView()
                 .environment(\.managedObjectContext, dataManager.container.viewContext)
+                .onAppear {
+                    print(URL.documentsDirectory.path)
+                }
         }
     }
 }
