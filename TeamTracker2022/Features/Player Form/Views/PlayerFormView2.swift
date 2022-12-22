@@ -26,42 +26,28 @@ struct PlayerFormView2: View {
                     .padding(.bottom)
                 PhotosPicker(selection: $imagePicker.imageSelection,
                              matching: .images,
-                             photoLibrary: .shared()) {
+                             photoLibrary: .shared(),
+                             label: {
                     Text(playerFormVM.updating ? "Change Player Image" : "Add Player Image")
+                })
+                .buttonStyle(.bordered)
+                .padding(.bottom)
+                .onChange(of: imagePicker.uiImage) { newImage in    
+                    playerFormVM.imageID = UUID().uuidString
+                    playerFormVM.playerImage = imagePicker.uiImage!
                 }
-                             .buttonStyle(.bordered)
-                             .padding(.bottom)
-                             .onChange(of: imagePicker.uiImage) { newImage in
-                                 playerFormVM.imageID = UUID().uuidString
-                                 playerFormVM.playerImage = imagePicker.uiImage!
-                             }
                 
                 TextField("First Name", text: $playerFormVM.newFirstName, onCommit: setNextFocus)
                     .focused($focus, equals: \PlayerFormViewModel.newFirstName)
-                    .padding(.horizontal)
-                    .frame(height: 35)
-                    .overlay(content: {
-                        RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 1.0).foregroundColor(.gray).opacity(0.5)
-                    })
-                    .padding(.horizontal)
+                    .withCustomTextField()
                 TextField("Last Name", text: $playerFormVM.newLastName, onCommit: setNextFocus)
                     .focused($focus, equals: \PlayerFormViewModel.newLastName)
-                    .padding(.horizontal)
-                    .frame(height: 35)
-                    .overlay(content: {
-                        RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 1.0).foregroundColor(.gray).opacity(0.5)
-                    })
-                    .padding(.horizontal)
+                    .withCustomTextField()
                 TextField("Position", text: $playerFormVM.newPosition, onCommit: setNextFocus)
                     .textInputAutocapitalization(.words)
                     .focused($focus, equals: \PlayerFormViewModel.newPosition)
-                    .padding(.horizontal)
-                    .frame(height: 35)
-                    .overlay(content: {
-                        RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 1.0).foregroundColor(.gray).opacity(0.5)
-                    })
-                    .padding(.horizontal)
-
+                    .withCustomTextField()
+                
             }
             .navigationTitle(playerFormVM.updating ? "Update Player" : "New Player")
             .navigationBarTitleDisplayMode(.inline)
