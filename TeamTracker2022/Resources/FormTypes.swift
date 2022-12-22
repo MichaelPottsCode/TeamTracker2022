@@ -24,9 +24,9 @@ enum PlayerFormType: Identifiable, View {
     var body: some View {
         switch self {
         case .new:
-            return PlayerFormView2(playerFormVM: PlayerFormViewModel())
+            return PlayerFormView(playerFormVM: PlayerFormViewModel())
         case .update(let player):
-            return PlayerFormView2(playerFormVM: PlayerFormViewModel(player))
+            return PlayerFormView(playerFormVM: PlayerFormViewModel(player))
         }
     }
 }

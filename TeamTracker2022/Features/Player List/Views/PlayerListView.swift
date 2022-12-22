@@ -5,6 +5,7 @@
 //  Created by Michael Potts on 12/13/22.
 //
 
+import CoreData
 import SwiftUI
 
 struct PlayerListView: View {
@@ -18,11 +19,6 @@ struct PlayerListView: View {
                 ForEach(playerListVM.players) { player in
                     NavigationLink(value: player) {
                         PlayerListItemView(player: player)
-//                        PlayerListItemView2(id: player.objectID)
-                        
-//                            .overlay {
-//                                Text("Edit")
-//                            }
                     }
                     .swipeActions(edge: .leading, allowsFullSwipe: true, content: {
                         Button {
@@ -31,31 +27,21 @@ struct PlayerListView: View {
                             Text("Edit")
                         }
                         .tint(.blue)
-
                     })
                 }
                 .onDelete(perform: playerListVM.deletePlayer)
             }
             .navigationDestination(for: PlayerEntity.self, destination: { player in
-//                PlayerImageView(image: player.uiImage)
                 PlayerListItemView(player: player)
             })
             .listStyle(.plain)
             .navigationTitle("Players")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        formType = .new
-                    } label: {
-                        Text("Add player")
-                    }
+                    addPlayer
                 }
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        // Add a link to the Settings view
-                    } label: {
-                        Symbols.settings
-                    }
+                    settings
                 }
             }
             .sheet(item: $formType) {
@@ -63,6 +49,22 @@ struct PlayerListView: View {
                     playerListVM.loadPlayers()
                 }
             } content: { $0 }
+        }
+    }
+    
+    var settings: some View {
+        Button {
+            // Add a link to the Settings view
+        } label: {
+            Symbols.settings
+        }
+    }
+    
+    var addPlayer: some View {
+        Button {
+            formType = .new
+        } label: {
+            Text("Add player")
         }
     }
 }

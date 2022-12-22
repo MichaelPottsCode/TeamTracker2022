@@ -2,7 +2,7 @@
 //  PlayerFormView.swift
 //  TeamTracker2022
 //
-//  Created by Michael Potts on 12/14/22.
+//  Created by Michael Potts on 12/19/22.
 //
 
 import PhotosUI
@@ -13,40 +13,42 @@ struct PlayerFormView: View {
     @Environment(\.dismiss) var dismiss
     @StateObject var playerFormVM: PlayerFormViewModel
     @StateObject private var imagePicker = ImagePicker()
-//    @FocusState private var focus
+    @FocusState private var focus: AnyKeyPath?
     
     var body: some View {
         NavigationStack {
-            
             ScrollView {
-                VStack {
-                    Image(uiImage: playerFormVM.playerImage)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 200, height: 200)
-                        .clipShape(Circle())
-                        .padding(.bottom)
-                    PhotosPicker(selection: $imagePicker.imageSelection,
-                                 matching: .images,
-                                 photoLibrary: .shared(),
-                                 label: {
-                        Text(playerFormVM.updating ? "Change Player Image" : "Add Player Image")
-                    })
-                    .buttonStyle(.bordered)
+                Image(uiImage: playerFormVM.playerImage)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 200, height: 200)
+                    .clipShape(Circle())
                     .padding(.bottom)
-                    .onChange(of: imagePicker.uiImage) { newImage in
-                        playerFormVM.imageID = UUID().uuidString
-                        playerFormVM.playerImage = imagePicker.uiImage!
-                    }
-                    
-                    CustomTextField(textInput: $playerFormVM.newFirstName, label: "First Name")
-                    CustomTextField(textInput: $playerFormVM.newLastName, label: "Last Name")
-                    CustomTextField(textInput: $playerFormVM.newPosition, label: "Position")
-                                        
-                    Spacer()
+                PhotosPicker(selection: $imagePicker.imageSelection,
+                             matching: .images,
+                             photoLibrary: .shared(),
+                             label: {
+                    Text(playerFormVM.updating ? "Change Player Image" : "Add Player Image")
+                })
+                .buttonStyle(.bordered)
+                .padding(.bottom)
+                .onChange(of: imagePicker.uiImage) { newImage in    
+                    playerFormVM.imageID = UUID().uuidString
+                    playerFormVM.playerImage = imagePicker.uiImage!
                 }
+                
+                TextField("First Name", text: $playerFormVM.newFirstName, onCommit: setNextFocus)
+                    .focused($focus, equals: \PlayerFormViewModel.newFirstName)
+                    .withCustomTextField()
+                TextField("Last Name", text: $playerFormVM.newLastName, onCommit: setNextFocus)
+                    .focused($focus, equals: \PlayerFormViewModel.newLastName)
+                    .withCustomTextField()
+                TextField("Position", text: $playerFormVM.newPosition, onCommit: setNextFocus)
+                    .textInputAutocapitalization(.words)
+                    .focused($focus, equals: \PlayerFormViewModel.newPosition)
+                    .withCustomTextField()
+                
             }
-            .padding(.top)
             .navigationTitle(playerFormVM.updating ? "Update Player" : "New Player")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -66,7 +68,33 @@ struct PlayerFormView: View {
                     }
                     .disabled(playerFormVM.incomplete)
                 }
+                ToolbarItem(placement: .keyboard) {
+                    Button {
+                        focus = nil
+                    } label: {
+                        Image(systemName: "keyboard.chevron.compact.down")
+                    }
+                }
             }
+        }
+        .task {
+            if !playerFormVM.updating {
+                try? await Task.sleep(nanoseconds: 500_000_000)
+                focus = \PlayerFormViewModel.newFirstName
+            }
+        }
+    }
+    
+    func setNextFocus() {
+        switch focus {
+        case \PlayerFormViewModel.newFirstName:
+            focus = \PlayerFormViewModel.newLastName
+        case \PlayerFormViewModel.newLastName:
+            focus = \PlayerFormViewModel.newPosition
+        case \PlayerFormViewModel.newPosition:
+            focus = \PlayerFormViewModel.newFirstName
+        default:
+            break
         }
     }
 }

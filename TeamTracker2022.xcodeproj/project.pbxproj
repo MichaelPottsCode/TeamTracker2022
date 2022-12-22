@@ -21,11 +21,10 @@
 		2765885C294A017D00E67F0B /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2765885B294A017D00E67F0B /* Symbols.swift */; };
 		2765885E294A01F900E67F0B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2765885D294A01F900E67F0B /* Theme.swift */; };
 		27658860294A953800E67F0B /* FormTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2765885F294A953800E67F0B /* FormTypes.swift */; };
-		27658865294A9CBA00E67F0B /* PlayerFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27658864294A9CBA00E67F0B /* PlayerFormView.swift */; };
 		27658867294A9CE300E67F0B /* PlayerFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27658866294A9CE300E67F0B /* PlayerFormViewModel.swift */; };
 		27658869294A9D4400E67F0B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27658868294A9D4400E67F0B /* CustomTextField.swift */; };
 		2765886C294BF17E00E67F0B /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2765886B294BF17E00E67F0B /* ImagePicker.swift */; };
-		27D9795F29512C7200F70B16 /* PlayerFormView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D9795E29512C7200F70B16 /* PlayerFormView2.swift */; };
+		27D9795F29512C7200F70B16 /* PlayerFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D9795E29512C7200F70B16 /* PlayerFormView.swift */; };
 		27DA5F8F2953F58B00F826BE /* View + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DA5F8E2953F58A00F826BE /* View + Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,12 +44,11 @@
 		2765885B294A017D00E67F0B /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		2765885D294A01F900E67F0B /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		2765885F294A953800E67F0B /* FormTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTypes.swift; sourceTree = "<group>"; };
-		27658864294A9CBA00E67F0B /* PlayerFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFormView.swift; sourceTree = "<group>"; };
 		27658866294A9CE300E67F0B /* PlayerFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFormViewModel.swift; sourceTree = "<group>"; };
 		27658868294A9D4400E67F0B /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		2765886B294BF17E00E67F0B /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		27C98383294FED110093FF1E /* DND-004.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "DND-004.md"; sourceTree = "<group>"; };
-		27D9795E29512C7200F70B16 /* PlayerFormView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFormView2.swift; sourceTree = "<group>"; };
+		27D9795E29512C7200F70B16 /* PlayerFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFormView.swift; sourceTree = "<group>"; };
 		27DA5F8E2953F58A00F826BE /* View + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View + Extensions.swift"; sourceTree = "<group>"; };
 		27DD0701294F84AB0098E7B1 /* DND-003.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "DND-003.md"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,9 +195,8 @@
 		27658862294A9C9000E67F0B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				27658864294A9CBA00E67F0B /* PlayerFormView.swift */,
 				27658868294A9D4400E67F0B /* CustomTextField.swift */,
-				27D9795E29512C7200F70B16 /* PlayerFormView2.swift */,
+				27D9795E29512C7200F70B16 /* PlayerFormView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -310,7 +307,7 @@
 				27DA5F8F2953F58B00F826BE /* View + Extensions.swift in Sources */,
 				276588592949FC0400E67F0B /* PlayerImageView.swift in Sources */,
 				27658867294A9CE300E67F0B /* PlayerFormViewModel.swift in Sources */,
-				27D9795F29512C7200F70B16 /* PlayerFormView2.swift in Sources */,
+				27D9795F29512C7200F70B16 /* PlayerFormView.swift in Sources */,
 				2750DD5B2949189A00614DF9 /* PlayerListView.swift in Sources */,
 				2750DD592949189A00614DF9 /* TeamTracker2022App.swift in Sources */,
 				2765885E294A01F900E67F0B /* Theme.swift in Sources */,
@@ -318,7 +315,6 @@
 				2765886C294BF17E00E67F0B /* ImagePicker.swift in Sources */,
 				272827C7294D38B400FF8C8F /* FileManager+Extensions.swift in Sources */,
 				2750DD6D29491C6300614DF9 /* PlayerListViewModel.swift in Sources */,
-				27658865294A9CBA00E67F0B /* PlayerFormView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

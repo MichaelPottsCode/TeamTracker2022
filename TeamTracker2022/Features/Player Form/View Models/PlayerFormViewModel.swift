@@ -78,8 +78,6 @@ final class PlayerFormViewModel: ObservableObject {
             } catch {
                 print("ERROR SAVING DATA \(error.localizedDescription)")
             }
-            
         }
-
     }
 }
