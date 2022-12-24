@@ -18,20 +18,27 @@ struct PlayerFormView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                Image(uiImage: playerFormVM.playerImage)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 200, height: 200)
-                    .clipShape(Circle())
-                    .padding(.bottom)
+//                Image(uiImage: playerFormVM.playerImage)
+//                    .resizable()
+//                    .scaledToFill()
+//                    .frame(width: 200, height: 200)
+//                    .clipShape(Circle())
+//                    .padding(.bottom)
                 PhotosPicker(selection: $imagePicker.imageSelection,
                              matching: .images,
                              photoLibrary: .shared(),
                              label: {
-                    Text(playerFormVM.updating ? "Change Player Image" : "Add Player Image")
+//                    Text(playerFormVM.updating ? "Change Player Image" : "Add Player Image")
+                    Image(uiImage: playerFormVM.playerImage)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 200, height: 200)
+                        .clipShape(Circle())
+//                        .padding(.bottom)
+
                 })
-                .buttonStyle(.bordered)
-                .padding(.bottom)
+//                .buttonStyle(.bordered)
+                .padding(.vertical)
                 .onChange(of: imagePicker.uiImage) { newImage in    
                     playerFormVM.imageID = UUID().uuidString
                     playerFormVM.playerImage = imagePicker.uiImage!
