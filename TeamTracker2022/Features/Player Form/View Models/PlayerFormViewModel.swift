@@ -16,6 +16,7 @@ final class PlayerFormViewModel: ObservableObject {
     @Published var newFirstName: String = ""
     @Published var newLastName: String = ""
     @Published var newPosition: String = ""
+    @Published var newPlayerHeight: String = ""
     @Published var imageID: String?
     @Published var playerImage: UIImage = UIImage(named: "placeholder")!
     
@@ -31,6 +32,7 @@ final class PlayerFormViewModel: ObservableObject {
         newFirstName = player.firstName
         newLastName = player.lastName
         newPosition = player.position
+        newPlayerHeight = player.playerHeight
         imageID = player.imageID
         playerImage = player.uiImage
         id = player.objectID
@@ -47,6 +49,7 @@ final class PlayerFormViewModel: ObservableObject {
         newPlayer.firstName_ = newFirstName
         newPlayer.lastName_ = newLastName
         newPlayer.position_ = newPosition
+        newPlayer.playerHeight_ = newPlayerHeight
         newPlayer.imageID_ = imageID
         
         FileManager().saveImage(with: imageID!, image: playerImage)

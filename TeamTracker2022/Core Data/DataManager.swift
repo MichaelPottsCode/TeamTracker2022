@@ -20,6 +20,7 @@ final class DataManager {
             newPlayer.firstName_ = "Mike \(index)"
             newPlayer.lastName_ = "Potts"
             newPlayer.position_ = "CDM"
+            newPlayer.playerHeight_ = "172"
         }
         do {
             try viewContext.save()
