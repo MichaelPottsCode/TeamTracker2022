@@ -4,6 +4,7 @@
         <attribute name="firstName_" optional="YES" attributeType="String"/>
         <attribute name="imageID_" optional="YES" attributeType="String"/>
         <attribute name="lastName_" optional="YES" attributeType="String"/>
+        <attribute name="playerHeight_" optional="YES" attributeType="String"/>
         <attribute name="position_" optional="YES" attributeType="String"/>
     </entity>
 </model>

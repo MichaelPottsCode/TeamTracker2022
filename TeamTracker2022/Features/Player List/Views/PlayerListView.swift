@@ -32,8 +32,12 @@ struct PlayerListView: View {
                 .onDelete(perform: playerListVM.deletePlayer)
             }
             .navigationDestination(for: PlayerEntity.self, destination: { player in
-                PlayerListItemView(player: player)
+//                PlayerListItemView(player: player)
+                PlayerDetailView(player: player)
             })
+//            .refreshable {
+//                playerListVM.loadPlayers()
+//            }
             .listStyle(.plain)
             .navigationTitle("Players")
             .toolbar {

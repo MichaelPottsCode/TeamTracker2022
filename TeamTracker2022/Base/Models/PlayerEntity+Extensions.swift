@@ -23,6 +23,10 @@ extension PlayerEntity {
         position_ ?? "No position"
     }
     
+    var playerHeight: String {
+        playerHeight_ ?? ""
+    }
+    
     var imageID: String {
         imageID_ ?? ""
     }
