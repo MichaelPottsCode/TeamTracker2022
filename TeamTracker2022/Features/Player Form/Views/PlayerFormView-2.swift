@@ -16,14 +16,16 @@ struct PlayerFormView2: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
-                
-                imagePickerView
-                
-                dataFields
-                
-                Spacer()
-                
+            ScrollView {
+                VStack {
+                    
+                    imagePickerView
+                    
+                    dataFields
+                    
+                    Spacer()
+                    
+                }
             }
             .navigationTitle(playerFormVM.updating ? "Update Player" : "Add Player")
             .navigationBarTitleDisplayMode(.inline)
@@ -33,6 +35,7 @@ struct PlayerFormView2: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     addButton
+                        .disabled(playerFormVM.incomplete)
                 }
                 ToolbarItem(placement: .keyboard) {
                     keyboardDismissButton
@@ -55,11 +58,7 @@ struct PlayerFormView2: View {
                      matching: .images,
                      photoLibrary: .shared(),
                      label: {
-            Image(uiImage: playerFormVM.playerImage)
-                .resizable()
-                .scaledToFill()
-                .frame(width: 200, height: 200)
-                .clipShape(Circle())
+            PlayerImageView(size: 175, color: .black, image: playerFormVM.playerImage)
             
         })
         .padding(.vertical)
@@ -79,16 +78,27 @@ struct PlayerFormView2: View {
     
     var dataFields: some View {
         VStack {
-            TextField("First Name", text: $playerFormVM.newFirstName, onCommit: setNextFocus)
+            CustomTextField(textInput: $playerFormVM.newFirstName, label: "First Name", commitFunction: setNextFocus)
                 .focused($focus, equals: \PlayerFormViewModel.newFirstName)
-            TextField("Last Name", text: $playerFormVM.newLastName, onCommit: setNextFocus)
+            CustomTextField(textInput: $playerFormVM.newLastName, label: "Last Name", commitFunction: setNextFocus)
                 .focused($focus, equals: \PlayerFormViewModel.newLastName)
-            TextField("Position", text: $playerFormVM.newPosition, onCommit: setNextFocus)
+            // add date of bitrth here
+            CustomNumberField(textInput: $playerFormVM.newPlayerHeight, label: "Height(cm)", commitFunction: setNextFocus, includesDecimal: false)
+                .focused($focus, equals: \PlayerFormViewModel.newPlayerHeight)
+            CustomTextField(textInput: $playerFormVM.newPosition, label: "Position", commitFunction: setNextFocus)
                 .focused($focus, equals: \PlayerFormViewModel.newPosition)
                 .textInputAutocapitalization(.words)
-            TextField("Height(cm)", text: $playerFormVM.newPlayerHeight, onCommit: setNextFocus)
-                .focused($focus, equals: \PlayerFormViewModel.newPlayerHeight)
-                .numbersOnly($playerFormVM.newPlayerHeight, includeDecimal: false)
+            CustomNumberField(textInput: $playerFormVM.newJerseyNumber, label: "Jersey Number", commitFunction: setNextFocus, includesDecimal: false)
+                .focused($focus, equals: \PlayerFormViewModel.newJerseyNumber)
+            CustomTextField(textInput: $playerFormVM.newClubName, label: "Club Name", commitFunction: setNextFocus)
+                .focused($focus, equals: \PlayerFormViewModel.newClubName)
+            CustomTextField(textInput: $playerFormVM.newHighSchoolName, label: "High School", commitFunction: setNextFocus)
+                .focused($focus, equals: \PlayerFormViewModel.newHighSchoolName)
+            CustomTextField(textInput: $playerFormVM.newEmail, label: "Email", commitFunction: setNextFocus)
+                .focused($focus, equals: \PlayerFormViewModel.newEmail)
+                .keyboardType(.emailAddress)
+            CustomTextField(textInput: $playerFormVM.newCellPhone, label: "Cell Phone", commitFunction: setNextFocus)
+                .focused($focus, equals: \PlayerFormViewModel.newCellPhone)
         }
         .textFieldStyle(.roundedBorder)
         .padding(.horizontal)
@@ -107,10 +117,10 @@ struct PlayerFormView2: View {
         Button {
             focus = nil
         } label: {
-            HStack {
-                Spacer()
+//            HStack {
+//                Spacer()
                 Image(systemName: "keyboard.chevron.compact.down")
-            }
+//            }
         }
     }
     
@@ -119,10 +129,20 @@ struct PlayerFormView2: View {
         case \PlayerFormViewModel.newFirstName:
             focus = \PlayerFormViewModel.newLastName
         case \PlayerFormViewModel.newLastName:
-            focus = \PlayerFormViewModel.newPosition
-        case \PlayerFormViewModel.newPosition:
             focus = \PlayerFormViewModel.newPlayerHeight
         case \PlayerFormViewModel.newPlayerHeight:
+            focus = \PlayerFormViewModel.newPosition
+        case \PlayerFormViewModel.newPosition:
+            focus = \PlayerFormViewModel.newJerseyNumber
+        case \PlayerFormViewModel.newJerseyNumber:
+            focus = \PlayerFormViewModel.newClubName
+        case \PlayerFormViewModel.newClubName:
+            focus = \PlayerFormViewModel.newHighSchoolName
+        case \PlayerFormViewModel.newHighSchoolName:
+            focus = \PlayerFormViewModel.newEmail
+        case \PlayerFormViewModel.newEmail:
+            focus = \PlayerFormViewModel.newCellPhone
+        case \PlayerFormViewModel.newCellPhone:
             focus = \PlayerFormViewModel.newFirstName
         default:
             break

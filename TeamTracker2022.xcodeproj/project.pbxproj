@@ -25,6 +25,7 @@
 		27658867294A9CE300E67F0B /* PlayerFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27658866294A9CE300E67F0B /* PlayerFormViewModel.swift */; };
 		27658869294A9D4400E67F0B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27658868294A9D4400E67F0B /* CustomTextField.swift */; };
 		2765886C294BF17E00E67F0B /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2765886B294BF17E00E67F0B /* ImagePicker.swift */; };
+		27B6553C295CD6B600FC7B74 /* CustomNumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6553B295CD6B600FC7B74 /* CustomNumberField.swift */; };
 		27D9795F29512C7200F70B16 /* PlayerFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D9795E29512C7200F70B16 /* PlayerFormView.swift */; };
 		27DA5F8F2953F58B00F826BE /* View + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DA5F8E2953F58A00F826BE /* View + Extensions.swift */; };
 		27ED4D822954E99800324B18 /* PlayerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ED4D812954E99800324B18 /* PlayerDetailView.swift */; };
@@ -51,6 +52,7 @@
 		27658866294A9CE300E67F0B /* PlayerFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFormViewModel.swift; sourceTree = "<group>"; };
 		27658868294A9D4400E67F0B /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		2765886B294BF17E00E67F0B /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		27B6553B295CD6B600FC7B74 /* CustomNumberField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNumberField.swift; sourceTree = "<group>"; };
 		27C98383294FED110093FF1E /* DND-004.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "DND-004.md"; sourceTree = "<group>"; };
 		27D9795E29512C7200F70B16 /* PlayerFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFormView.swift; sourceTree = "<group>"; };
 		27DA5F8E2953F58A00F826BE /* View + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View + Extensions.swift"; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				27658868294A9D4400E67F0B /* CustomTextField.swift */,
 				27D9795E29512C7200F70B16 /* PlayerFormView.swift */,
 				275A9900295B8C1A00A481CC /* PlayerFormView-2.swift */,
+				27B6553B295CD6B600FC7B74 /* CustomNumberField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				275A9901295B8C1A00A481CC /* PlayerFormView-2.swift in Sources */,
 				2750DD69294918C200614DF9 /* TeamModel.xcdatamodeld in Sources */,
 				2750DD6B2949191C00614DF9 /* DataManager.swift in Sources */,
+				27B6553C295CD6B600FC7B74 /* CustomNumberField.swift in Sources */,
 				27DA5F8F2953F58B00F826BE /* View + Extensions.swift in Sources */,
 				276588592949FC0400E67F0B /* PlayerImageView.swift in Sources */,
 				27658867294A9CE300E67F0B /* PlayerFormViewModel.swift in Sources */,

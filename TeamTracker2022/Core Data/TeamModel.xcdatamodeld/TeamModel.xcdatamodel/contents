@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22D5027d" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="PlayerEntity" representedClassName="PlayerEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="cellPhone_" optional="YES" attributeType="String"/>
+        <attribute name="clubName_" optional="YES" attributeType="String"/>
+        <attribute name="dateOfBirth_" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="email_" optional="YES" attributeType="String"/>
         <attribute name="firstName_" optional="YES" attributeType="String"/>
+        <attribute name="highSchoolName_" optional="YES" attributeType="String"/>
         <attribute name="imageID_" optional="YES" attributeType="String"/>
+        <attribute name="jerseyNumber_" optional="YES" attributeType="String"/>
         <attribute name="lastName_" optional="YES" attributeType="String"/>
         <attribute name="playerHeight_" optional="YES" attributeType="String"/>
         <attribute name="position_" optional="YES" attributeType="String"/>

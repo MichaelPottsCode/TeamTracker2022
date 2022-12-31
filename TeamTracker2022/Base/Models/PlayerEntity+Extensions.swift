@@ -31,6 +31,30 @@ extension PlayerEntity {
         imageID_ ?? ""
     }
     
+    var jerseyNumber: String {
+        jerseyNumber_ ?? ""
+    }
+    
+    var clubName: String {
+        clubName_ ?? ""
+    }
+    
+    var highSchoolName: String {
+        highSchoolName_ ?? ""
+    }
+    
+    var email: String {
+        email_ ?? "No email"
+    }
+    
+    var cellPhone: String {
+        cellPhone_ ?? "No cell"
+    }
+    
+    var dateOfBirth: Date {
+        dateOfBirth_ ?? Date()
+    }
+    
     // computed properties
     var fullName: String {
         firstName + " " + lastName
@@ -43,6 +67,10 @@ extension PlayerEntity {
         } else {
             return UIImage(named: "placeholder")!
         }
+    }
+    
+    var dateOfBirthAsString: String {
+        dateOfBirth.formatted(date: .abbreviated, time: .omitted)
     }
     
 }

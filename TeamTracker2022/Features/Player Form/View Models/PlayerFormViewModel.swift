@@ -17,6 +17,12 @@ final class PlayerFormViewModel: ObservableObject {
     @Published var newLastName: String = ""
     @Published var newPosition: String = ""
     @Published var newPlayerHeight: String = ""
+    @Published var newJerseyNumber: String = ""
+    @Published var newEmail: String = ""
+    @Published var newCellPhone: String = ""
+    @Published var newClubName: String = ""
+    @Published var newHighSchoolName: String = ""
+    @Published var newDateOfBirth: Date = Date()
     @Published var imageID: String?
     @Published var playerImage: UIImage = UIImage(named: "placeholder")!
     
@@ -33,6 +39,12 @@ final class PlayerFormViewModel: ObservableObject {
         newLastName = player.lastName
         newPosition = player.position
         newPlayerHeight = player.playerHeight
+        newJerseyNumber = player.jerseyNumber
+        newEmail = player.email
+        newCellPhone = player.cellPhone
+        newClubName = player.clubName
+        newHighSchoolName = player.highSchoolName
+        newDateOfBirth = player.dateOfBirth
         imageID = player.imageID
         playerImage = player.uiImage
         id = player.objectID
@@ -50,6 +62,12 @@ final class PlayerFormViewModel: ObservableObject {
         newPlayer.lastName_ = newLastName
         newPlayer.position_ = newPosition
         newPlayer.playerHeight_ = newPlayerHeight
+        newPlayer.jerseyNumber_ = newJerseyNumber
+        newPlayer.email_ = newEmail
+        newPlayer.cellPhone_ = newCellPhone
+        newPlayer.clubName_ = newClubName
+        newPlayer.highSchoolName_ = newHighSchoolName
+        newPlayer.dateOfBirth_ = newDateOfBirth
         newPlayer.imageID_ = imageID
         
         FileManager().saveImage(with: imageID!, image: playerImage)
@@ -64,23 +82,34 @@ final class PlayerFormViewModel: ObservableObject {
     func updatePlayer() {
         // find contact with the object ID from the player being edited
         if let playerToUpdate = viewContext.object(with: self.id!) as? PlayerEntity {
-            
+                        
             // Delete the current image
             FileManager().deleteImage(with: playerToUpdate.imageID)
             
+            viewContext.delete(playerToUpdate)
+            
+            addPlayer()
+            
             // Update all properties based on what was entered (newXXX)
-            playerToUpdate.firstName_ = newFirstName
-            playerToUpdate.lastName_ = newLastName
-            playerToUpdate.position_ = newPosition
-            playerToUpdate.imageID_ = imageID
-            
-            FileManager().saveImage(with: imageID!, image: playerImage)
-            
-            do {
-                try viewContext.save()
-            } catch {
-                print("ERROR SAVING DATA \(error.localizedDescription)")
-            }
+//            playerToUpdate.firstName_ = newFirstName
+//            playerToUpdate.lastName_ = newLastName
+//            playerToUpdate.position_ = newPosition
+//            playerToUpdate.playerHeight_ = newPlayerHeight
+//            playerToUpdate.jerseyNumber_ = newJerseyNumber
+//            playerToUpdate.email_ = newEmail
+//            playerToUpdate.cellPhone_ = newCellPhone
+//            playerToUpdate.clubName_ = newClubName
+//            playerToUpdate.highSchoolName_ = newHighSchoolName
+//            playerToUpdate.dateOfBirth_ = newDateOfBirth
+//            playerToUpdate.imageID_ = imageID
+//
+//            FileManager().saveImage(with: imageID!, image: playerImage)
+//
+//            do {
+//                try viewContext.save()
+//            } catch {
+//                print("ERROR SAVING DATA \(error.localizedDescription)")
+//            }
         }
     }
 }

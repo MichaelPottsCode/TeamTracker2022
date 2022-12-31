@@ -1,16 +1,17 @@
 //
-//  CustomTextField.swift
+//  CustomNumberField.swift
 //  TeamTracker2022
 //
-//  Created by Michael Potts on 12/14/22.
+//  Created by Michael Potts on 12/28/22.
 //
 
 import SwiftUI
 
-struct CustomTextField: View {
+struct CustomNumberField: View {
     @Binding var textInput: String
     let label: String
     let commitFunction: () -> Void
+    let includesDecimal: Bool
     
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
@@ -19,20 +20,19 @@ struct CustomTextField: View {
                 .fontWeight(.semibold)
                 .font(.caption2)
                 .foregroundColor(.secondary)
-//                .padding(.leading)
             TextField("", text: $textInput, onCommit: commitFunction)
                 .textFieldStyle(.roundedBorder)
+                .numbersOnly($textInput, includeDecimal: includesDecimal)
         }
-//        .padding(.horizontal)
     }
 }
 
-struct CustomTextField_Previews: PreviewProvider {
+struct CustomNumberField_Previews: PreviewProvider {
     static func test() {
         
     }
     
     static var previews: some View {
-        CustomTextField(textInput: .constant("First"), label: "First name", commitFunction: test)
+        CustomNumberField(textInput: .constant("12"), label: "Jersey Number", commitFunction: test, includesDecimal: false)
     }
 }
