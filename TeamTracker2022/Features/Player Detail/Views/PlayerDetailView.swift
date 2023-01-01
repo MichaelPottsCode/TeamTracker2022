@@ -17,16 +17,17 @@ struct PlayerDetailView: View {
                 // replace this cricle view with a call to the player image view
                 Circle()
                     .frame(width: 225, height: 225)
-                Text("#6")
-                Text("Central Defensive Midfielder")
+                Text("#\(player.jerseyNumber)")
+                Text(player.position)
                     .bold()
-                Text("175 cm")
+                Text("\(player.playerHeight) cm")
             }
-            .font(.title2)
+            .font(.title3)
             .italic()
             
             Button {
                 // Open a view with detailed profile
+                print(player.cP)
             } label: {
                 Text("View Detailed Profile")
             }
@@ -50,8 +51,8 @@ struct PlayerDetailView: View {
             
             Spacer()
         }
-        .navigationTitle("Noah Potts")
-        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle(player.fullName)
+//        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
