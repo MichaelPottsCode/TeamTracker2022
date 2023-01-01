@@ -27,6 +27,7 @@ struct PlayerDetailView: View {
             
             Button {
                 // Open a view with detailed profile
+                print(player.cP)
             } label: {
                 Text("View Detailed Profile")
             }

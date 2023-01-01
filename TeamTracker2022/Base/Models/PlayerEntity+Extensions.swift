@@ -47,9 +47,9 @@ extension PlayerEntity {
         email_ ?? "No email"
     }
     
-    var cellPhone: String {
-        cellPhone_ ?? "No cell"
-    }
+//    var cellPhone: String {
+//        cellPhone_ ?? "No cell"
+//    }
     
     var dateOfBirth: Date {
         dateOfBirth_ ?? Date()
@@ -71,6 +71,16 @@ extension PlayerEntity {
     
     var dateOfBirthAsString: String {
         dateOfBirth.formatted(date: .abbreviated, time: .omitted)
+    }
+    
+    var cellPhone: String {
+        if var cellPhone = cellPhone_ {
+            cellPhone.insert("-", at: String.Index(utf16Offset: 6, in: cellPhone))
+            cellPhone.insert("-", at: String.Index.init(utf16Offset: 3, in: cellPhone))
+            return cellPhone
+        } else {
+            return "No cell"
+        }
     }
     
 }
