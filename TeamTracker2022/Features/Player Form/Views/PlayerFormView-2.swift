@@ -83,6 +83,16 @@ struct PlayerFormView2: View {
             CustomTextField(textInput: $playerFormVM.newLastName, label: "Last Name", commitFunction: setNextFocus)
                 .focused($focus, equals: \PlayerFormViewModel.newLastName)
             // add date of bitrth here
+            HStack {
+                Text("Date of Birth".uppercased())
+                    .font(.caption2)
+                    .foregroundColor(.secondary)
+                Spacer()
+                DatePicker("",
+                           selection: $playerFormVM.newDateOfBirth,
+                           in: ...Date(),
+                           displayedComponents: .date)
+            }
             CustomNumberField(textInput: $playerFormVM.newPlayerHeight, label: "Height(cm)", commitFunction: setNextFocus, includesDecimal: false)
                 .focused($focus, equals: \PlayerFormViewModel.newPlayerHeight)
             CustomTextField(textInput: $playerFormVM.newPosition, label: "Position", commitFunction: setNextFocus)

@@ -27,7 +27,7 @@ struct PlayerDetailView: View {
             
             Button {
                 // Open a view with detailed profile
-                print(player.cP)
+                print(player.cellPhone)
             } label: {
                 Text("View Detailed Profile")
             }
