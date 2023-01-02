@@ -86,6 +86,7 @@ struct PlayerFormView2: View {
             HStack {
                 Text("Date of Birth".uppercased())
                     .font(.caption2)
+                    .fontWeight(.semibold)
                     .foregroundColor(.secondary)
                 Spacer()
                 DatePicker("",
