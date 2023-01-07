@@ -7,29 +7,64 @@
 
 import SwiftUI
 
+struct GameModel {
+    let opponent: String
+    let ourScore: Int
+    let opponentScore: Int
+    let dateOfGame: Date
+    let gameDuration: Int
+    let gameType: String
+    
+    var dateOfGameAsString: String {
+        dateOfGame.formatted(date: .long, time: .omitted)
+    }
+    
+    var gameResult: some View {
+        if ourScore > opponentScore {
+            return Text("W \(ourScore)-\(opponentScore)")
+                .foregroundColor(.green)
+                .fontWeight(.bold)
+        } else if ourScore < opponentScore {
+            return Text("L \(ourScore)-\(opponentScore)")
+                .foregroundColor(.red)
+                .fontWeight(.bold)
+        } else {
+            return Text("D \(ourScore)-\(opponentScore)")
+                .foregroundColor(.secondary)
+                .fontWeight(.bold)
+        }
+    }
+}
+
 struct GameListItemView: View {
+//    let game: GameEntity
+    let game = GameModel(opponent: "Arlington Blue 2007B",
+                         ourScore: 3,
+                         opponentScore: 2,
+                         dateOfGame: Date(),
+                         gameDuration: 80,
+                         gameType: "Club")
+    
     var body: some View {
         HStack {
             
             VStack(alignment: .leading) {
-                Text("West Springfield  HS")
+                Text(game.opponent)
                     .font(.title2)
                     .fontWeight(.bold)
-                VStack {
-                    Text("High School Game")
-                    Text("February 20, 2023")
+                VStack(alignment: .leading) {
+                    Text("\(game.gameType) Game")
+                    Text(game.dateOfGameAsString)
                 }
                 .italic()
                 .foregroundColor(.secondary)
             }
             
             Spacer()
-            // color coded for win, loss, draw
-            // this should be a computed property for the game entity
-            Text("W 12-10")
-                .fontWeight(.bold)
+            
+            game.gameResult
                 .frame(width: 75, alignment: .trailing)
-                .border(.red)
+//                .border(.red)
         }
     }
 }
