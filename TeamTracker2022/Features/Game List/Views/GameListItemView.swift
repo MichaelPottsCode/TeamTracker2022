@@ -37,13 +37,13 @@ struct GameModel {
 }
 
 struct GameListItemView: View {
-//    let game: GameEntity
-    let game = GameModel(opponent: "Arlington Blue 2007B",
-                         ourScore: 3,
-                         opponentScore: 2,
-                         dateOfGame: Date(),
-                         gameDuration: 80,
-                         gameType: "Club")
+    let game: GameEntity
+//    let game = GameModel(opponent: "Arlington Blue 2007B",
+//                         ourScore: 3,
+//                         opponentScore: 2,
+//                         dateOfGame: Date(),
+//                         gameDuration: 80,
+//                         gameType: "Club")
     
     var body: some View {
         HStack {
@@ -53,7 +53,7 @@ struct GameListItemView: View {
                     .font(.title2)
                     .fontWeight(.bold)
                 VStack(alignment: .leading) {
-                    Text("\(game.gameType) Game")
+//                    Text("\(game.gameType) Game")
                     Text(game.dateOfGameAsString)
                 }
                 .italic()
@@ -69,8 +69,8 @@ struct GameListItemView: View {
     }
 }
 
-struct GameListItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        GameListItemView()
-    }
-}
+//struct GameListItemView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GameListItemView()
+//    }
+//}
